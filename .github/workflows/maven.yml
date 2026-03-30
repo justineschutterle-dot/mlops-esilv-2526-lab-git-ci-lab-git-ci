@@ -36,3 +36,11 @@ jobs:
         with:
           name: my-app-1.0
           path: target/
+
+      - name: Install Docker
+        uses: docker/setup-buildx-action@v1
+        with:
+          install: true
+
+      - name: Docker build
+        run: docker build .
